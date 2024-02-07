@@ -30,5 +30,7 @@ jobs:
         env:
           CONTAINS_SKIP: ${{ contains(join(toJson(github.event.commits.*.message)), '#skip') }}
         run: echo "$CONTAINS_SKIP"
-      - name: simple echo
-        run: echo "echo!"
+      - name: example join
+        env:
+          ARR: ${{ join(github.event.commits.*.message, ', ') }}
+        run: echo "$ARR"
