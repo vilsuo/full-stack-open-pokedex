@@ -34,3 +34,7 @@ jobs:
         env:
           ARR: ${{ join(github.event.commits.*.message, ', ') }}
         run: echo "$ARR"
+      - name: example contains
+        env:
+          ARR_C: ${{ contains(join(github.event.commits.*.message, ', '), '#skip' }}
+        run: echo "$ARR_C"
