@@ -31,4 +31,4 @@ jobs:
           CONTAINS_SKIP: ${{ contains(join(toJson(github.event.commits.*.message)), '#skip') }}
         run: echo "$CONTAINS_SKIP"
       - name: simple echo
-        run: echo "echoing"
+        run: echo "echo!"
